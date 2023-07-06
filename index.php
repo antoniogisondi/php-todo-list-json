@@ -23,10 +23,10 @@
                         <div class="card p-4">
                             <ul class="list-group" v-for="(task, index) in tasks_todolist">
                                 <li class="list-group-item d-flex justify-content-between mb-1">
-                                    <h5>{{ task.text }}</h5>
+                                    <h5 :class="task.done ? '' : 'done-task'">{{ task.text }}</h5>
                                     <div class="btn-group">
-                                        <button type="button" class="btn btn-primary">
-                                            <i class="fa-solid fa-check"></i>
+                                        <button type="button" class="btn btn-primary" :class="task.done ? 'btn-success' : 'btn-dark'" @click="taskDone(index)">
+                                            <i class="fa-solid" :class="task.done ? 'fa-check' : 'fa-xmark'"></i>
                                         </button>
                                         <button type="button" class="btn btn-warning">
                                             <i class="fa-sharp fa-solid fa-file-pen"></i>

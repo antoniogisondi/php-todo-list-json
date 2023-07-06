@@ -7,3 +7,7 @@
 body {
     background-color: rgba(55, 55, 237, 0.501);
 }
+
+.done-task {
+    text-decoration: line-through;
+}

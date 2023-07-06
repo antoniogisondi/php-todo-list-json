@@ -11,6 +11,3 @@ Mostrare lo stato del task → se completato, barrare il testo;
 Permettere di segnare un task come completato facendo click sul testo;
 Permettere il toggle del task (completato/non completato);
 Abilitare l’eliminazione di un task.
-
-SVOLGIMENTO:
-1- Copio l'oggetto nel file main.js e lo ciclo con un v-for per mostrarlo a schermo;

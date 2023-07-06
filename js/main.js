@@ -25,6 +25,9 @@ const app = Vue.createApp({
                 console.log(this.tasks_todolist)
 
             })
-        }
+        },
+        taskDone(index) {
+            this.tasks_todolist[index].done = !this.tasks_todolist[index].done
+        },
     },
 }).mount('#app')
