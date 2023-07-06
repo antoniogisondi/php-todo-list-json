@@ -21,7 +21,7 @@
                         </div>
                         
                         <div class="card p-4">
-                            <ul class="list-group" v-for="(task , index) in tasks_todolist">
+                            <ul class="list-group" v-for="(task, index) in tasks_todolist">
                                 <li class="list-group-item d-flex justify-content-between mb-1">
                                     <h5>{{ task.text }}</h5>
                                     <div class="btn-group">
@@ -41,9 +41,9 @@
                             <ul class="list-group mt-2">
                                 <li class="list-group-item d-flex justify-content-between">
                                     <div class="input-group">
-                                        <input type="text" class="form-control" placeholder="Inserisci task">
+                                        <input type="text" class="form-control" placeholder="Inserisci task" @keyup.enter="addTask" :key="index" v-model="item">
                                     </div>
-                                    <button type="button" class="btn btn-success">
+                                    <button type="button" class="btn btn-success" @click="addTask">
                                         <i class="fas fa-plus"></i>
                                         <span>Aggiungi</span>
                                     </button>
