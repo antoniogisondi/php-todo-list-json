@@ -3,8 +3,7 @@ const app = Vue.createApp({
     data() {
         return {
             item: '',
-            done: '',
-            tasks_todolist: null,
+            tasks_todolist: [],
             apiUrl: 'server.php',
         }
     },
@@ -12,18 +11,16 @@ const app = Vue.createApp({
         axios.get(this.apiUrl).then((response) => {
             this.tasks_todolist = response.data
         })
-        this.addTask()
     },
     methods: {
         addTask() {
-            const data = {
+            const obj = {
                 text: this.item,
-                done: this.done
+                done: false
             }
 
-            axios.post(this.apiUrl, data, { headers: { 'Content-Type': 'multipart/form-data' } }).then((response) => {
+            axios.post(this.apiUrl, { obj }, { headers: { 'Content-Type': 'multipart/form-data' } }).then((response) => {
                 this.item = ''
-                this.done = ''
                 this.tasks_todolist = response.data
                 console.log(this.tasks_todolist)
 
