@@ -5,7 +5,7 @@
     if(isset($_POST['obj'])){
         $newObj = [
             "text" => $_POST['obj']['text'],
-            "done" => true
+            "done" => false
         ];
 
         array_push($array, $newObj);
